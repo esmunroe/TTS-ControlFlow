@@ -14,6 +14,12 @@ public class Main {
 		String name = scanner.next();
 		System.out.println("Hello " + name);
 		
+		String choice = "";
+		do {
+			System.out.println("Do you wish to continue? (yes, no)");
+			choice = scanner.next();
+		} while (choice != "yes" || choice != "y" || choice != "no" || choice != "n");
+		
 		scanner.close();
 	}
 
