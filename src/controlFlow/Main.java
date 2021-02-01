@@ -60,11 +60,11 @@ public class Main {
 				magicBall = qbNum * randomNum;
 				firstLotto = (int) petName.charAt(2);
 				secondLotto = modelYear + luckyNum;
-				thirdLotto = randomNum - genNum;
+				thirdLotto = (int) favActor.charAt(0);
 				fourthLotto = petAge + modelYear;
 				fifthLotto = qbNum + petAge + luckyNum;
 				
-				if (magicBall > MAGIC_BALL_MAX) {
+				while (magicBall > MAGIC_BALL_MAX) {
 					magicBall -= MAGIC_BALL_MAX;
 				}
 				if (firstLotto > LOTTO_MAX) {
@@ -86,7 +86,7 @@ public class Main {
 				System.out.println("Lottery Numbers: "  + firstLotto + " " + secondLotto + " " + thirdLotto + " " + fourthLotto + " " + fifthLotto);
 				System.out.println("Magic Ball: " + magicBall);
 				
-				System.out.println("Do you wish to play again?");
+				System.out.println("Do you wish to play again? ");
 				playAgain = scanner.next();
 			} while (!playAgain.equals("no") || !playAgain.equals("n"));
 		}
