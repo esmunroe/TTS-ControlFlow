@@ -1,6 +1,4 @@
 package controlFlow;
-
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -111,7 +109,6 @@ public class Main {
 				playAgain = scanner.next();
 			} while (playAgain.equals("yes") || playAgain.equals("y"));
 		}
-		
 		System.out.println("Thank you! Goodbye.");
 		scanner.close();
 	}
