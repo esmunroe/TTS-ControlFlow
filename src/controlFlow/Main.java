@@ -16,8 +16,11 @@ public class Main {
 		System.out.println("Hello " + name);
 		
 		String choice = "";
-		System.out.print("Do you wish to continue? (yes, no) ");
-		choice = scanner.next();
+		
+		do {
+			System.out.print("Do you wish to continue? (yes, no) ");
+			choice = scanner.next();
+		} while (!(choice.equals("yes") || choice.equals("y") || choice.equals("no") || choice.equals("n")));
 		
 		String petName = "";
 		int petAge = 0;
@@ -30,25 +33,43 @@ public class Main {
 		
 		if (choice.equals("yes") || choice.equals("y")) {
 			do {
-				System.out.print("What is the name of your favorite pet? ");
-				petName = scanner.next();
-				System.out.print("What is the age of your favorite pet? ");
-				petAge = scanner.nextInt();
-				System.out.print("What is your lucky number? ");
-				luckyNum = scanner.nextInt();
-				System.out.print("Do you have a favorite quarterback?  If so, what is their jersey number? ");
-				qbNum = scanner.nextInt();
-				System.out.print("What is the two-digit model year of your car? (e.g. 99) ");
-				modelYear = scanner.nextInt();
-				System.out.print("What is the first name of your favorite actor/actress? ");
-				favActor = scanner.next();
-				System.out.print("Enter a number between 1 and 50? ");
-				randomNum = scanner.nextInt();
+				do {
+					System.out.print("What is the name of your favorite pet? ");
+					petName = scanner.next();
+				} while (petName.length() < 3);
 				
-				Random rnd = new Random();
+				do {
+					System.out.print("What is the age of your favorite pet? ");
+					petAge = scanner.nextInt();
+				} while (petAge <= 0);
+				
+				do {
+					System.out.print("What is your lucky number? ");
+					luckyNum = scanner.nextInt();
+				} while (luckyNum <= 0);
+				
+				do {
+					System.out.print("Do you have a favorite quarterback?  If so, what is their jersey number? ");
+					qbNum = scanner.nextInt();
+				} while (qbNum <= 0 || qbNum > 99);
+				
+				do {
+					System.out.print("What is the two-digit model year of your car? (e.g. 99) ");
+					modelYear = scanner.nextInt();
+				} while (modelYear <= 0 || modelYear > 99);
+				
+				do {
+					System.out.print("What is the first name of your favorite actor/actress? ");
+					favActor = scanner.next();
+				} while (favActor.length() < 3);
+				
+				do {
+					System.out.print("Enter a number between 1 and 50? ");
+					randomNum = scanner.nextInt();
+				} while (randomNum <= 0 || randomNum > 50);
+				
 				final int MAGIC_BALL_MAX = 75;
 				final int LOTTO_MAX = 65;
-				int genNum = rnd.nextInt(LOTTO_MAX - 1) + 1;
 				
 				int magicBall = 0;
 				int firstLotto = 0;
