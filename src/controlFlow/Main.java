@@ -86,9 +86,9 @@ public class Main {
 				System.out.println("Lottery Numbers: "  + firstLotto + " " + secondLotto + " " + thirdLotto + " " + fourthLotto + " " + fifthLotto);
 				System.out.println("Magic Ball: " + magicBall);
 				
-				System.out.println("Do you wish to play again? ");
+				System.out.print("Do you wish to play again? ");
 				playAgain = scanner.next();
-			} while (!playAgain.equals("no") || !playAgain.equals("n"));
+			} while (playAgain.equals("yes") || playAgain.equals("y"));
 		}
 		
 		System.out.println("Thank you! Goodbye.");
